@@ -6,7 +6,6 @@ Map Freemarker dependencies
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/freemarker-dependency-mapper.svg)](https://npmjs.org/package/freemarker-dependency-mapper)
 [![Downloads/week](https://img.shields.io/npm/dw/freemarker-dependency-mapper.svg)](https://npmjs.org/package/freemarker-dependency-mapper)
-[![License](https://img.shields.io/npm/l/freemarker-dependency-mapper.svg)](https://github.com/colinfruit/npx oclif single mynewcli/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
