@@ -1,5 +1,5 @@
 import {Command, flags} from '@oclif/command'
-import { FreemarkerDeps } from './parse';
+import { FreemarkerDeps } from './freemarkerDeps';
 
 class FreemarkerDependencyMapper extends Command {
   static description = 'describe the command here'
@@ -12,6 +12,7 @@ class FreemarkerDependencyMapper extends Command {
     name: flags.string({char: 'n', description: 'name to print'}),
     // flag for ftl template path
     template: flags.string({char: 't', description: 'ftl template path'}),
+    dir: flags.string({char: 'd', description: 'ftl base path[s]'}),
   }
 
   static args = [{name: 'file'}]
@@ -19,11 +20,13 @@ class FreemarkerDependencyMapper extends Command {
   async run() {
     const {args, flags} = this.parse(FreemarkerDependencyMapper)
 
-    if (flags.template) {
-      const deps = new FreemarkerDeps(flags.template);
-      deps.parseFile();
+    if (flags.template && flags.dir) {
+      const dir = flags.dir.split(",");
+      dir.forEach((path: string) => this.log("path", path));
+      const deps = new FreemarkerDeps(flags.template, dir);
+      deps.generateTree();
     } else {
-      throw new Error("you must supply a template arg!");
+      throw new Error("you must supply a template and dir args!");
     }
   }
 }
