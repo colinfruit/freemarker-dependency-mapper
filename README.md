@@ -12,7 +12,6 @@ Utility to generate a graph of FreeMarker dependencies.
 
 <!-- toc -->
 * [Usage](#usage)
-* [Commands](#commands)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
