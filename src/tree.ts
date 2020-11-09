@@ -10,9 +10,6 @@ class Tree {
   }
 
   static isImport(token: any) {
-    // if (token.type == "Directive" && token.text == "import") {
-    //   console.log(token);
-    // }
     return (token.type == "Directive" && token.text == "import");
   }
 
@@ -61,11 +58,7 @@ class Tree {
   	 */
   generateTree(path: string = this.templatePath) {
     const tree = { filename: path, dependencies: [] };
-    // console.log(this.getDeps(path));
     let deps = this.getDeps(path);
-    console.log(deps);
-    // console.log(deps);
-    // return;
     tree.dependencies = deps.map((dep: string) => {
       return this.generateTree(dep);
     });
