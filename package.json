@@ -31,7 +31,7 @@
     "/bin",
     "/lib"
   ],
-  "homepage": "https://github.com/colinfruit/npx oclif single mynewcli",
+  "homepage": "https://github.com/colinfruit/freemarker-dependency-mapper",
   "keywords": [
     "oclif"
   ],

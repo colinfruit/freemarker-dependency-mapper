@@ -1,8 +1,9 @@
 import {Command, flags} from '@oclif/command'
-import { FreemarkerDeps } from './freemarkerDeps';
+import { Tree } from './tree';
+import { image } from './graph';
 
 class FreemarkerDependencyMapper extends Command {
-  static description = 'describe the command here'
+  static description = 'Generate a visualization of the dependency tree of a FreeMarker template'
 
   static flags = {
     // add --version flag to show CLI version
@@ -13,20 +14,19 @@ class FreemarkerDependencyMapper extends Command {
     // flag for ftl template path
     template: flags.string({char: 't', description: 'ftl template path'}),
     dir: flags.string({char: 'd', description: 'ftl base path[s]'}),
+    output: flags.string({char: 'o', description: 'output path'})
   }
 
-  static args = [{name: 'file'}]
-
   async run() {
-    const {args, flags} = this.parse(FreemarkerDependencyMapper)
+    const {flags} = this.parse(FreemarkerDependencyMapper)
 
-    if (flags.template && flags.dir) {
+    if (flags.template && flags.dir && flags.output) {
       const dir = flags.dir.split(",");
-      dir.forEach((path: string) => this.log("path", path));
-      const deps = new FreemarkerDeps(flags.template, dir);
-      deps.generateTree();
+      const deps = new Tree(flags.template, dir);
+      const tree = deps.generateTree();
+      image(tree, flags.output);
     } else {
-      throw new Error("you must supply a template and dir args!");
+      throw new Error("you must supply a template, dir, and output flags!");
     }
   }
 }
