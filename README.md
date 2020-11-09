@@ -22,6 +22,7 @@ $ freemarker-dependency-mapper (-v|--version|version)
 freemarker-dependency-mapper/0.0.0 darwin-x64 node-v12.13.0
 $ freemarker-dependency-mapper --help [COMMAND]
 USAGE
-  $ freemarker-dependency-mapper --template TEMPLATE --dir DIR,DIR --output IMAGE
+  $ freemarker-dependency-mapper COMMAND
 ...
 ```
+<!-- usagestop -->

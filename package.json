@@ -2,7 +2,7 @@
   "name": "freemarker-dependency-mapper",
   "description": "Map Freemarker dependencies",
   "version": "0.0.0",
-  "author": "cfruit",
+  "author": "Colin Fruit",
   "bin": {
     "freemarker-dependency-mapper": "./bin/run"
   },
