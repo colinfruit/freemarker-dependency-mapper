@@ -114,6 +114,7 @@ const createGraph = (g: any, fileTree: any, edges: any) => {
  const image = (tree: any, outputPath: string) => {
 	checkGraphvizInstalled();
   const options = createGraphvizOptions();
+  options.type = path.extname(outputPath).replace('.', '') || 'png';
   const g = graphviz.digraph("G");
   const edges = new Set();
   const graph = createGraph(g, tree, edges);

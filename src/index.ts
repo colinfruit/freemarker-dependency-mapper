@@ -14,6 +14,7 @@ class FreemarkerDependencyMapper extends Command {
     // flag for ftl template path
     template: flags.string({char: 't', description: 'ftl template path'}),
     dir: flags.string({char: 'd', description: 'ftl base path[s]'}),
+    // TODO make this work for all img formats
     output: flags.string({char: 'o', description: 'output path'})
   }
 
