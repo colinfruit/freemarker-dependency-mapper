@@ -7,7 +7,6 @@ Utility to generate a graph of FreeMarker dependencies.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/freemarker-dependency-mapper.svg)](https://npmjs.org/package/freemarker-dependency-mapper)
-[![Downloads/week](https://img.shields.io/npm/dw/freemarker-dependency-mapper.svg)](https://npmjs.org/package/freemarker-dependency-mapper)
 
 
 <!-- toc -->
